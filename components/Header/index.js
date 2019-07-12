@@ -9,10 +9,10 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-const article = document.querySelector('.headerContainer')
+const article = document.querySelector('.header-Container')
 
 
-function Header(title, date, heading, temp) {
+function Header(topicObj) {
 
     //create dom variables
     const title = document.createElement('div')
@@ -32,9 +32,9 @@ function Header(title, date, heading, temp) {
     title.appendChild(temp)
 
     //text to content
-    date.textContent = date
-    heading.textContent = heading
-    temp.textContent = temp
+    date.textContent = `Date ${topicObj.date}`
+    heading.textContent = `${topicObj.heading}`
+    temp.textContent = `Temp ${topicObj.temp}`
 
-    return title;
+    return title
 }
