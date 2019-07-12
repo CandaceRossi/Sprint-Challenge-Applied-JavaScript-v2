@@ -9,4 +9,32 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header() {}
+const articleHeader = document.querySelector('.header-Container')
+
+
+function Header(topicObj) {
+
+    //create dom variables
+    const title = document.createElement('div')
+    const date = document.createElement('span')
+    const heading = document.createElement('h1')
+    const temp = document.createElement('span')
+
+    //attach to classes
+    title.classList.add('header')
+    date.classList.add('date')
+    heading.classList.add('h1')
+    temp.classList.add('temp')
+
+    //append to variables
+    title.appendChild(date)
+    title.appendChild(heading)
+    title.appendChild(temp)
+
+    //text to content
+    date.textContent = `Date ${topicObj.date}`
+    heading.textContent = `${topicObj.heading}`
+    temp.textContent = `Temp ${topicObj.temp}`
+
+    return title
+}
