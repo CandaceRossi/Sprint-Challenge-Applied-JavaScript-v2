@@ -9,7 +9,7 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-const article = document.querySelector('.header-Container')
+const articleHeader = document.querySelector('.header-Container')
 
 
 function Header(topicObj) {
