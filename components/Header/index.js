@@ -10,32 +10,30 @@
 // And add it to the DOM in the .headerContainer component
 
 
-function Header(topicObj) {
+function Header() {
 
     //create dom variables
     const articleHeader = document.createElement('div')
-    const title = document.createElement('div')
     const date = document.createElement('span')
     const heading = document.createElement('h1')
     const temp = document.createElement('span')
 
     //attach to classes
-    articleHeader.classList.add('header-container')
-    title.classList.add('header')
+    articleHeader.classList.add('header')
     date.classList.add('date')
-    heading.classList.add('h1')
     temp.classList.add('temp')
 
     //append to variables
-    articleHeader.appendChild(title)
-    title.appendChild(date)
-    title.appendChild(heading)
-    title.appendChild(temp)
+    articleHeader.appendChild(date)
+    articleHeader.appendChild(heading)
+    articleHeader.appendChild(temp)
 
     //text to content
-    date.textContent = `Date ${topicObj.date}`
-    heading.textContent = `${topicObj.heading}`
-    temp.textContent = `Temperature ${topicObj.temp}`
+    date.textContent = `SMARCH 28, 2019`
+    heading.textContent = `Lambda Times`
+    temp.textContent = `98°`
 
-    return title
+    return articleHeader
 }
+const headerContainer = document.querySelector('.header-container')
+headerContainer.appendChild(Header())
