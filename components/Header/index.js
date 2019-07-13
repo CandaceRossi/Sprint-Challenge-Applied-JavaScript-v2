@@ -34,7 +34,7 @@ function Header(topicObj) {
     //text to content
     date.textContent = `Date ${topicObj.date}`
     heading.textContent = `${topicObj.heading}`
-    temp.textContent = `Temp ${topicObj.temp}`
+    temp.textContent = `Temperature ${topicObj.temp}`
 
     return title
 }

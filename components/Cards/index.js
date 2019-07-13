@@ -18,12 +18,6 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const article = document.querySelectorAll('.card')
-console.log("woopee", article)
-article.forEach(data => {
-    article.appendChild(createArticle(data.card, data.headline, data.author, data.container, data.img, data.authName))
-})
-
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((data) => {
         //here is where we get results from server
@@ -34,13 +28,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         console.log('yeehawnyawn', elements)
         topics.appendChild(elements)
 
-        const article = document.querySelectorAll('.card')
-        console.log("woopee", article)
-        for ([i] in article) {
-            article[i](dat => {
-                article.appendChild(createArticle(dat.card, dat.headline, dat.author, dat.container, dat.img, dat.authName))
-            })
-        }
+        // const article = document.querySelectorAll('.card')
+        // console.log("woopee", article)
+        // for (x in y) {
+        //     y[x].forEach((dat => {
+        //         article.appendChild(createArticle(dat.card, dat.headline, dat.author, dat.container, dat.img, dat.authName))
+        //     }))
+        // }
     })
 
 .catch((error) => {
@@ -78,10 +72,11 @@ function createArticle(articleObj) {
 
 
     //text to content 
-    articleHeadline = `${articleObj.articles[0].headline}`
-    articleAuthor.textContent = `Author: ${articleObj.articles[0].authorName}`
-    articleImg.src = `${articleObj.articles[0].authorPhoto}`
-    articleAuthName.textContent = `Author Name ${articleObj.article[0].authorName}`
+    articleHeadline.textContent = `${articleObj.articles.}`
+    console.log("man o man", articleHeadline)
+    articleAuthor.textContent = `Author: ${articleObj.articles.authorName}`
+    articleImg.src = `${articleObj.articles.authorPhoto}`
+    articleAuthName.textContent = `Author Name ${articleObj.articles.authorName}`
 
     return articleCards
 
