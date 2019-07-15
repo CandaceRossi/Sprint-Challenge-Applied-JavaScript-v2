@@ -17,3 +17,64 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const cards = document.querySelector('.cards-container')
+
+
+
+
+axios
+    .get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        //here is where we get results from server
+        console.log('study', response.data)
+        const articles = response.data.articles
+        for (topic in articles) {
+            articles[topic].forEach(article => {
+                cards.appendChild(createArticle(article))
+            })
+        }
+    })
+
+.catch(error => {
+    console.log('ERROR', error)
+})
+
+
+function createArticle(articleObj) {
+    console.log("comment", articleObj)
+        //create dom variables
+    const card = document.createElement('div')
+    const headline = document.createElement('div')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    const img = document.createElement('img')
+    const authorName = document.createElement('span')
+
+    //attach to classes
+
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgContainer.classList.add('img-container')
+
+
+    //text to content 
+    headline.textContent = `${articleObj.headline}`
+    console.log("man o man", headline)
+    author.textContent = `By ${articleObj.authorName}`
+    console.log("okaynow", author)
+    img.src = `${articleObj.authorPhoto}`
+    console.log("geez", img)
+
+    //append to variables
+    cards.appendChild(card)
+    card.appendChild(headline)
+    card.appendChild(author)
+    author.appendChild(imgContainer)
+    imgContainer.appendChild(img)
+    author.appendChild(authorName)
+
+    return card
+
+}
