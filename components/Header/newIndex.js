@@ -24,6 +24,9 @@ function Header() {
   heading.textContent = `Lambda Times`;
   temp.textContent = `98°`;
   //append to variables
+  Header.appendChild(date);
+  Header.appendChild(heading);
+  Header.appendChild(temp);
 
   return lambdaHeader;
 }
