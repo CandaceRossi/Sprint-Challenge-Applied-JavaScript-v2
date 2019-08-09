@@ -7,3 +7,11 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+axios
+  .get("")
+  .then(response => {})
+
+  .catch(error => {
+    console.log("ERROR, error");
+  });
