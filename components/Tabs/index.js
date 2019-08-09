@@ -36,5 +36,7 @@ function createTab(topicObject) {
   //text to content
   tab.textContent = topicObject;
 
+  //append to variables
+
   return tab;
 }
