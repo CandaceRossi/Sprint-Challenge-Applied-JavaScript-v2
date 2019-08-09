@@ -15,10 +15,10 @@ axios
   .then(response => {
     //here is where we get results from server
     console.log("response", response);
-    response.data.topics.forEach(lambdaTopic);
-    topics.appendChild(newTab(lambdaTopic));
+    response.data.topics.forEach(lambdaTopic => {
+      topics.appendChild(newTab(lambdaTopic));
+    });
   })
-
   .catch(error => {
     console.log("ERROR", error);
   });
@@ -26,14 +26,15 @@ axios
 function newTab(item) {
   //create Elements
   const tab = document.createElement("div");
+
   //set Styles
   tab.classList.add("tab");
 
   //text to content
-  tab.textContent = topicObject;
+  tab.textContent = item;
 
   //append to variables
-  // tab.appendChild();
+  tab.appendChild(topics);
 
   return tab;
 }

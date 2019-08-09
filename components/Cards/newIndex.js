@@ -17,3 +17,26 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios 
+.get(
+.then(response => {
+    
+})
+)
+.catch(error => {
+    console.log("Error", error)
+})
+
+function newArticle(item) {
+
+    //create dom variables
+
+    //set styles
+
+    //text to content
+
+    //append child
+
+    return card
+}
