@@ -7,7 +7,6 @@
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
 //  </div >
-// And add it to the DOM in the .headerContainer component
 
 function Header() {
   //create dom variables
@@ -17,8 +16,19 @@ function Header() {
   const temp = document.createElement("span");
 
   //set styles
-
+  lambdaHeader.classList.add("header");
+  date.classList.add("date");
+  temp.classList.add("temp");
   //text to content
-
+  date.textContent = `SMARCH 28, 2019`;
+  heading.textContent = `Lambda Times`;
+  temp.textContent = `98°`;
   //append to variables
+
+  return lambdaHeader;
 }
+
+// And add it to the DOM in the header-container component
+
+const headerContainer = document.querySelector(".header-container");
+headerContainer.appendChild(Header());
