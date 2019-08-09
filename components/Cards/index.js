@@ -39,6 +39,7 @@ axios
 
 function createArticle(articleObj) {
   console.log("comment", articleObj);
+
   //create dom variables
   const card = document.createElement("div");
   const headline = document.createElement("div");
